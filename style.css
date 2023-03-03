@@ -1,0 +1,219 @@
+* {
+  margin: 0;
+  padding: 0;
+
+  box-sizing: border-box;
+}
+
+:root {
+  font-size: 62.5%;
+
+  --bg-color-primary: #000;
+
+  --bg-input: #06181c;
+
+  --bg-table-head: hsla(194, 72%, 13%, 1);
+  --bg-tr-odd: hsla(195, 61%, 6%, 0.5);
+  --bg-tr-even: hsla(192, 65%, 7%, 1);
+
+  --bg-button: #065e7c;
+  --bg-button-hover: #ffffff;
+
+  --fc-primary: #e1e1e6;
+  --fc-button: #fff;
+  --fc-button-hover: #065e7c;
+  --fc-danger: #f75a68;
+
+  --ff-primary: "Roboto", sans-serif;
+  --ff-secondary: "Roboto Mono", monospace;
+}
+
+body {
+  background-color: var(--bg-color-primary);
+
+  height: 100vh;
+}
+
+.sr-only {
+  position: absolute;
+  width: 1px;
+  height: 1px;
+  padding: 0;
+  margin: -1px;
+  overflow: hidden;
+  clip: rect(0, 0, 0, 0);
+  white-space: nowrap;
+  border-width: 0;
+}
+
+#app {
+  max-width: 112rem;
+  margin: 0 auto;
+  padding: 5rem 0;
+
+  color: var(--fc-primary);
+  font-family: var(--ff-primary);
+}
+
+header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+
+  margin-bottom: 8.7rem;
+}
+
+.input-search {
+  display: flex;
+  gap: 0.8rem;
+}
+
+.input-search input {
+  width: 46.2rem;
+
+  padding: 1.6rem;
+  background-color: var(--bg-input);
+
+  border-style: none;
+  border-radius: 5px;
+
+  color: var(--fc-primary);
+}
+
+.input-search button {
+  padding: 1.2rem 3.2rem;
+
+  display: flex;
+  align-items: center;
+  gap: 0.8rem;
+
+  background-color: var(--bg-button);
+
+  font-size: 1.4rem;
+  font-weight: 700;
+  text-transform: uppercase;
+  color: var(--fc-button);
+
+  border-style: none;
+  border-radius: 5px;
+
+  cursor: pointer;
+
+  transition: all 100ms;
+}
+
+.input-search button:hover {
+  background-color: var(--bg-button-hover);
+  color: var(--fc-button-hover);
+}
+
+.input-search button:hover svg path {
+  fill: var(--fc-button-hover);
+}
+
+table {
+  border-spacing: 0;
+  border-radius: 1.2rem;
+  border: 1px solid #4a808c;
+
+  width: 100%;
+}
+
+table * {
+  font-size: 2rem;
+  font-weight: 700;
+}
+
+thead th {
+  background-color: var(--bg-table-head);
+
+  text-align: left;
+  padding: 1.6rem 4rem;
+}
+
+thead th:first-child {
+  border-top-left-radius: 1.2rem;
+}
+
+thead th:last-child {
+  border-top-right-radius: 1.2rem;
+}
+
+tbody.users-data tr:nth-child(odd) td {
+  background-color: var(--bg-tr-odd);
+  border-bottom: 1px solid #4a808c;
+}
+
+tbody.users-data tr:nth-child(even) td {
+  background-color: var(--bg-tr-even);
+  border-bottom: 1px solid #1f363b;
+}
+
+tbody.users-data td {
+  padding: 2.4rem 4rem;
+}
+
+tbody.users-data tr:last-child td:first-child {
+  border-bottom-left-radius: 1.2rem;
+}
+
+tbody.users-data tr:last-child td:last-child {
+  border-bottom-right-radius: 1.2rem;
+}
+
+td.user {
+  display: flex;
+  align-items: center;
+  gap: 1.6rem;
+}
+
+td.user img {
+  border-radius: 50%;
+  object-fit: cover;
+
+  width: 5.6rem;
+}
+
+td.user a {
+  text-decoration: none;
+  color: var(--fc-primary);
+}
+
+td.user span {
+  font-weight: 400;
+}
+
+button.remove {
+  color: var(--fc-danger);
+
+  border: none;
+  background: transparent;
+
+  cursor: pointer;
+}
+
+tbody.empty-table td {
+  height: 60rem;
+}
+
+tbody.empty-table div {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 6rem;
+}
+
+tbody.empty-table div img {
+  width: 13.2rem;
+  height: 12.5rem;
+}
+
+tbody.empty-table div span {
+  font-family: var(--ff-secondary);
+  font-size: 4rem;
+  color: #4e5455;
+}
+
+.hide {
+  display: none;
+}
